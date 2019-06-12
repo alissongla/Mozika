@@ -8028,7 +8028,12 @@ button.bg-dark:focus
 {
     background-color: #0a0c0d !important;
 }
-
+.bg-laranjaMozika{
+    background-color: #D7870F;
+}
+.bg-black{
+    background-color: #000;
+}
 .bg-default
 {
     background-color: #172b4d !important;
