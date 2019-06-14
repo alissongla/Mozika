@@ -6,7 +6,10 @@
     <div class="container mt--8 pb-5">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7" style="margin-top: 15%">
-                <div class="card bg-secondary shadow border-0">
+                <div class="card shadow border-0">
+                    <div class="card-header bg-transparent pb-5">
+                        <img alt="Image placeholder" src="{{ asset('argon') }}/img/brand/mozika.png" style="margin-left: 26%; width: 50%;">
+                    </div>
                     <div class="card-body px-lg-5 py-lg-7">
                         <form role="form" method="POST" action="{{ route('login') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -44,7 +47,7 @@
                                 </label>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary my-4">{{ __('Sign in') }}</button>
+                                <button type="submit" class="btn btn-primary my-4">{{ __('Entrar') }}</button>
                             </div>
                         </form>
                     </div>
@@ -53,13 +56,13 @@
                     <div class="col-6">
                         @if (Route::has('password.request'))
                             <a href="{{ route('password.request') }}" class="text-light">
-                                <small>{{ __('Forgot password?') }}</small>
+                                <small>{{ __('Esqueceu a senha?') }}</small>
                             </a>
                         @endif
                     </div>
                     <div class="col-6 text-right">
                         <a href="{{ route('register') }}" class="text-light">
-                            <small>{{ __('Create new account') }}</small>
+                            <small>{{ __('Criar nova conta') }}</small>
                         </a>
                     </div>
                 </div>
