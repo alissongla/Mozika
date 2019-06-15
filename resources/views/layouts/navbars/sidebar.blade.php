@@ -84,22 +84,22 @@
                     <div class="collapse" id="navbar-cadastro">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.edit') }}" style="text-decoration: bold">
+                                <a class="nav-link" href="{{ route('fornecedores') }}" style="text-decoration: bold">
                                     {{ __('Fornecedores') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.edit') }}" style="text-decoration: bold">
+                                <a class="nav-link" href="{{ route('produtos') }}" style="text-decoration: bold">
                                     {{ __('Produtos') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.edit') }}" style="text-decoration: bold">
+                                <a class="nav-link" href="{{ route('usuarios') }}" style="text-decoration: bold">
                                     {{ __('Usuários') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.edit') }}" style="text-decoration: bold">
+                                <a class="nav-link" href="{{ route('clientes') }}" style="text-decoration: bold">
                                     {{ __('Clientes') }}
                                 </a>
                             </li>

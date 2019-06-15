@@ -22,6 +22,22 @@ Route::get('/home', function () {
 })->name('home');
 Auth::routes();
 
+Route::get('/fornecedores', function(){
+	return view('cadastros/fornecedores');
+})->name('fornecedores');
+
+Route::get('/produtos', function(){
+	return view('cadastros/produtos');
+})->name('produtos');
+
+Route::get('/usuarios', function(){
+	return view('cadastros/usuarios');
+})->name('usuarios');
+
+Route::get('/clientes', function(){
+	return view('cadastros/clientes');
+})->name('clientes');
+
 
 
 Route::group(['middleware' => 'auth'], function () {
