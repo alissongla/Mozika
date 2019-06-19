@@ -25,6 +25,7 @@ Auth::routes();
 Route::get('/fornecedores', function(){
 	return view('cadastros/fornecedores');
 })->name('fornecedores');
+Route::post('/fornecedores/inserir', 'FornecedoresController@store')->name('CadastroFornecedor');
 
 Route::get('/produtos', function(){
 	return view('cadastros/produtos');

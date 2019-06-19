@@ -5,11 +5,81 @@
 </div>  
     <div class="container-fluid mt--7">
         <div class="row">
-            <div class="col-xl-8 mb-5 mb-xl-0">
+            <div class="col-xl-6 mb-5 mb-xl-0">
                 <div class="card bg-gradient-secondary shadow">
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
                             <h3>Cadastro de Fornecedores</h3>
+                        </div>
+                        <form role="form" method="POST" action="{{ route('CadastroFornecedor') }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                            <div class="form-group{{ $errors->has('nome') ? ' has-danger' : '' }}">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                    </div>
+                                    <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nome') }}" type="text" name="FOR_NOME" value="{{ old('name') }}" required autofocus>
+                                </div>
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="FOR_EMAIL" required>
+                                </div>
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="{{ __('Telefone') }}" type="text" name="FOR_TELEFONE">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="{{ __('Documento') }}" type="text" name="FOR_DOCUMENTO">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="{{ __('Endereço') }}" type="text" name="FOR_ENDERECO">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary mt-4" action="{{ route('CadastroFornecedor') }}">{{ __('Cadastrar Fornecedor') }}</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Lista de fornecedores -->
+            <div class="col-xl-6 mb-5 mb-xl-0">
+                <div class="card bg-gradient-secondary shadow">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <h3>Lista de fornecedores cadstrados</h3>
                         </div>
                     </div>
                     <div class="card-body">
