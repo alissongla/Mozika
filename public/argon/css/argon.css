@@ -21872,3 +21872,27 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 
     height: 3px;
 }
+
+.select-nossa{
+    background-color: white;
+    height: 40px;
+    
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    display: flex;
+
+    margin-bottom: 0;
+    
+
+    text-align: center;
+    white-space: nowrap;
+
+    color: #adb5bd;
+    border: 1px solid #cad1d7;
+    border-radius: .375rem; 
+    background-color: #fff;
+
+    align-items: center;
+}

@@ -27,9 +27,11 @@ Route::get('/fornecedores', function(){
 })->name('fornecedores');
 Route::post('/fornecedores/inserir', 'FornecedoresController@store')->name('CadastroFornecedor');
 
+
 Route::get('/produtos', function(){
 	return view('cadastros/produtos');
 })->name('produtos');
+Route::post('/produtos/inserir', 'ProdutosController@store')->name('CadastroProduto');
 
 Route::get('/usuarios', function(){
 	return view('cadastros/usuarios');

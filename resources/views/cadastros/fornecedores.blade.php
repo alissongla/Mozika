@@ -11,13 +11,15 @@
                         <div class="row align-items-center">
                             <h3>Cadastro de Fornecedores</h3>
                         </div>
-                        <form role="form" method="POST" action="{{ route('CadastroFornecedor') }}">
+                    </div>
+                    <div class="card-body">
+                    <form role="form" method="POST" action="{{ route('CadastroFornecedor') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group{{ $errors->has('nome') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                     </div>
                                     <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nome') }}" type="text" name="FOR_NOME" value="{{ old('name') }}" required autofocus>
                                 </div>
@@ -69,9 +71,6 @@
                             </div>
                         </form>
                     </div>
-                    <div class="card-body">
-                        
-                    </div>
                 </div>
             </div>
             <!-- Lista de fornecedores -->
@@ -79,7 +78,7 @@
                 <div class="card bg-gradient-secondary shadow">
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
-                            <h3>Lista de fornecedores cadstrados</h3>
+                            <h3>Lista de fornecedores cadastrados</h3>
                         </div>
                     </div>
                     <div class="card-body">

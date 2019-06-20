@@ -2,10 +2,10 @@
 
 namespace Mozika\Http\Controllers;
 
-use Mozika\Fornecedor;
+use Mozika\Produto;
 use Illuminate\Http\Request;
 
-class FornecedoresController extends Controller
+class ProdutosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class FornecedoresController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -24,7 +24,7 @@ class FornecedoresController extends Controller
      */
     public function create()
     {
-        return view('fornecedor.create');
+        return view('produtos.create');
     }
 
     /**
@@ -36,37 +36,40 @@ class FornecedoresController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'FOR_NOME' => 'required|string|max:255',
-            'FOR_EMAIL' => 'required|string|email|max:255|unique:fornecedores',
+            'PRO_NOME' => 'required|string|max:255',
+            'PRO_VALOR' => 'required|max:255',
+            'PRO_QTDE_ESTOQUE' => 'required|max:255',
+            'CAT_ID' => 'required|max:255',
+            'FOR_ID' => 'required|max:255'
         ];
 
         // Primeiro, vamos validar os dados do formulário
         $request->validate($rules);
 
         // Cria um novo registro
-        $fornecedor = new Fornecedor;
-        $fornecedor->FOR_NOME           = $request->FOR_NOME;
-        $fornecedor->FOR_TELEFONE       = $request->FOR_TELEFONE;
-        $fornecedor->FOR_EMAIL          = $request->FOR_EMAIL;
-        $fornecedor->FOR_DOCUMENTO      = $request->FOR_DOCUMENTO;
-        $fornecedor->FOR_ENDERECO       = $request->FOR_ENDERECO;
+        $produto = new Produto;
+        $produto->PRO_NOME         = $request->PRO_NOME;
+        $produto->PRO_VALOR        = $request->PRO_VALOR;
+        $produto->PRO_QTDE_ESTOQUE = $request->PRO_QTDE_ESTOQUE;
+        $produto->CAT_ID           = $request->CAT_ID;
+        $produto->FOR_ID           = $request->FOR_ID;
 
         // Salva os dados na tabela
-        $fornecedor->save();
+        $produto->save();
 
         // Retorna para view index com uma flash message
         return redirect()
-            ->route('fornecedores')
+            ->route('produtos')
             ->with('status', 'Registro criado com sucesso!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \Mozika\Fornecedor  $fornecedor
+     * @param  \Mozika\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function show(Fornecedor $fornecedor)
+    public function show(Produto $produto)
     {
         //
     }
@@ -74,10 +77,10 @@ class FornecedoresController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Mozika\Fornecedor  $fornecedor
+     * @param  \Mozika\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fornecedor $fornecedor)
+    public function edit(Produto $produto)
     {
         //
     }
@@ -86,10 +89,10 @@ class FornecedoresController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Mozika\Fornecedor  $fornecedor
+     * @param  \Mozika\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fornecedor $fornecedor)
+    public function update(Request $request, Produto $produto)
     {
         //
     }
@@ -97,10 +100,10 @@ class FornecedoresController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Mozika\Fornecedor  $fornecedor
+     * @param  \Mozika\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fornecedor $fornecedor)
+    public function destroy(Produto $produto)
     {
         //
     }
