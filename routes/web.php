@@ -33,13 +33,16 @@ Route::get('/produtos', function(){
 })->name('produtos');
 Route::post('/produtos/inserir', 'ProdutosController@store')->name('CadastroProduto');
 
+
 Route::get('/usuarios', function(){
 	return view('cadastros/usuarios');
 })->name('usuarios');
+Route::post('/usuarios/inserir', 'UsuariosController@store')->name('CadastroUsuario');
 
 Route::get('/clientes', function(){
 	return view('cadastros/clientes');
 })->name('clientes');
+Route::post('/clientes/inserir', 'ClientesController@store')->name('CadastroCliente');
 
 
 
