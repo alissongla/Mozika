@@ -16,10 +16,10 @@ class CreateTableFornecedores extends Migration
         Schema::create('fornecedores', function (Blueprint $table) {
             $table->bigIncrements('FOR_ID');
             $table->string('FOR_NOME');
-            $table->string('FOR_TELEFONE');
+            $table->string('FOR_TELEFONE')->nullable();
             $table->string('FOR_EMAIL');
             $table->string('FOR_DOCUMENTO');
-            $table->string('FOR_ENDERECO');
+            $table->string('FOR_ENDERECO')->nullable();
             $table->timestamps();
         });
     }

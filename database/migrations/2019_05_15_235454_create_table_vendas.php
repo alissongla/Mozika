@@ -15,7 +15,9 @@ class CreateTableVendas extends Migration
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->bigIncrements('VEN_ID');
-            $table->timestamp('VEN_DATA_VENDA');
+            $table->double('VEN_VALOR');
+            $table->date('VEN_DATA_VENDA');
+            $table->time('VEN_HORA_VENDA');
             $table->integer('VEN_QTDE_VENDIDA');
             $table->unsignedBigInteger('PRO_ID');
             $table->unsignedBigInteger('CLI_ID');

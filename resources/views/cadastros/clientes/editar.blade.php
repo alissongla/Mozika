@@ -47,7 +47,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="{{ __('Telefone') }}" type="text" name="CLI_TELEFONE" value="{{ $cliente->CLI_TELEFONE }}">
+                                    <input class="form-control tel_ddd" placeholder="{{ __('Telefone') }}" type="text" name="CLI_TELEFONE" value="{{ $cliente->CLI_TELEFONE }}">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -55,7 +55,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-badge"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="{{ __('Documento') }}" type="text" name="CLI_DOCUMENTO" value="{{ $cliente->CLI_DOCUMENTO }}">
+                                    <input class="form-control cpfCnpjMask" placeholder="{{ __('Documento') }}" type="text" name="CLI_DOCUMENTO" value="{{ $cliente->CLI_DOCUMENTO }}">
                                 </div>
                             </div>
                             <div class="text-center">
