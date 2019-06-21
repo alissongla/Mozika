@@ -11,6 +11,8 @@
                         <div class="row align-items-center">
                             <h3>Cadastro de Clientes</h3>
                         </div>
+                    </div>
+                    <div class="card-body">
                         <form role="form" method="POST" action="{{ route('CadastroCliente') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -61,9 +63,6 @@
                             </div>
                         </form>
                     </div>
-                    <div class="card-body">
-                        
-                    </div>
                 </div>
             </div>
             <!-- Lista de fornecedores -->
@@ -75,7 +74,37 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        
+                    <div class="table-responsive">
+                            <table class="table align-items-center">
+                                <tbody>
+                                    @foreach($clientes as $cliente)
+                                    <tr>
+                                        <td>{{ $cliente->CLI_NOME }}</td>
+                                        <td class='text-right' style="width: 140px;">
+                                            <a class='btn btn-warning btn-sm'
+                                                href='{{ route("EditarCliente", $cliente->CLI_ID) }}' role='button' style="margin-right: -40px;">
+                                                <i class='ni ni-settings'></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <form method="post" action="{{ route('ApagarCliente', $cliente->CLI_ID) }}"
+                                                style="">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <span class="form-group">
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class='fa fa-trash'></i>
+                                                    </button>
+                                                </span>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            @include('pagination.default', ['paginator' => $clientes])
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

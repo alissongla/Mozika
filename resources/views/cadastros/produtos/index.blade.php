@@ -90,7 +90,35 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        
+                        <table class="table align-items-center">
+                            <tbody>
+                                @foreach($produtos as $produto)
+                                <tr>
+                                    <td>{{ $produto->PRO_NOME }}</td>
+                                    
+                                    <td class='text-right' style="width: 140px;">
+                                        <a class='btn btn-warning btn-sm'
+                                            href='{{ route("EditarProduto", $produto->PRO_ID) }}' role='button' style="margin-right: -40px;">
+                                            <i class='ni ni-settings'></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form method="post" action="{{ route('ApagarProduto', $produto->PRO_ID) }}"
+                                            style="">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <span class="form-group">
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <i class='fa fa-trash'></i>
+                                                </button>
+                                            </span>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        @include('pagination.default', ['paginator' => $produtos])
                     </div>
                 </div>
             </div>

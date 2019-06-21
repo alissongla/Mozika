@@ -14,7 +14,10 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        //
+        // Obtém todos os registros da tabela de classificação
+        $clientes = Cliente::orderBy('CLI_ID', 'desc')->paginate(5);
+        //Retorna a pagina com os dados da tabela
+        return view('cadastros/clientes/index', ['clientes' => $clientes]);
     }
 
     /**
@@ -37,7 +40,6 @@ class ClientesController extends Controller
     {
         $rules = [
             'CLI_NOME' => 'required|string|max:255',
-            'CLI_EMAIL' => 'required|string|email|max:255|unique:clientes',
         ];
         
                 // Primeiro, vamos validar os dados do formulário
@@ -77,9 +79,20 @@ class ClientesController extends Controller
      * @param  \Mozika\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cliente $cliente)
+    public function edit($id)
     {
-        //
+        // Localiza o registro pelo seu ID
+        $cliente = Cliente::findOrFail($id);
+        // Obtém todos os registros da tabela de classificação
+        $clientes = Cliente::orderBy('CLI_ID', 'desc')->paginate(6);
+        // Chama a view com o formulário para edição do registro
+        return view(
+            'cadastros/clientes/editar',
+            [
+                'cliente'   => $cliente,
+                'clientes' => $clientes
+            ]
+        );
     }
 
     /**
@@ -89,9 +102,29 @@ class ClientesController extends Controller
      * @param  \Mozika\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'CLI_NOME' => 'required|string|max:255',
+        ];
+        
+                // Primeiro, vamos validar os dados do formulário
+                $request->validate($rules);
+
+                // Cria um novo registro
+                $clientes = Cliente::findOrFail($id);
+                $clientes->CLI_NOME           = $request->CLI_NOME;
+                $clientes->CLI_TELEFONE       = $request->CLI_TELEFONE;
+                $clientes->CLI_EMAIL          = $request->CLI_EMAIL;
+                $clientes->CLI_DOCUMENTO      = $request->CLI_DOCUMENTO;
+        
+                // Salva os dados na tabela
+                $clientes->save();
+        
+                // Retorna para view index com uma flash message
+                return redirect()
+                    ->route('clientes')
+                    ->with('status', 'Registro criado com sucesso!');
     }
 
     /**
@@ -102,6 +135,12 @@ class ClientesController extends Controller
      */
     public function destroy(Cliente $cliente)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        //Exclui o registro
+        $cliente->delete();
+
+        return redirect()
+            ->route('clientes')
+            ->with('status', 'Registro apagado com sucesso!');
     }
 }

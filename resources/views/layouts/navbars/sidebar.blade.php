@@ -111,11 +111,31 @@
                         </ul>
                     </div>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-cart text-orange"></i> <span class="nav-link-text" style="text-decoration: bold">{{ __('Venda') }}</span>
+                    <a class="nav-link active" href="#navbar-venda" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <i class="ni ni-cart text-orange" style="color: #f4645f;"></i>
+                        <span class="nav-link-text" style="text-decoration: bold">{{ __('Vendas') }}</span>
                     </a>
+
+                    <div class="collapse" id="navbar-venda">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('vendas') }}" style="text-decoration: bold">
+                                    {{ __('Pedido de venda') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('ListaVenda') }}" style="text-decoration: bold">
+                                    {{ __('Lista de vendas') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('NotaVenda') }}" style="text-decoration: bold">
+                                    {{ __('Comprovante de vendas') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">

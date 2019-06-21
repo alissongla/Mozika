@@ -14,7 +14,10 @@ class FornecedoresController extends Controller
      */
     public function index()
     {
-        
+        // Obtém todos os registros da tabela de classificação
+        $fornecedores = Fornecedor::orderBy('FOR_ID', 'desc')->paginate(5);
+        //Retorna a pagina com os dados da tabela
+        return view('cadastros/fornecedores/index', ['fornecedores' => $fornecedores]);
     }
 
     /**
@@ -24,7 +27,7 @@ class FornecedoresController extends Controller
      */
     public function create()
     {
-        return view('fornecedor.create');
+        //return view('fornecedor.create');
     }
 
     /**
@@ -77,9 +80,20 @@ class FornecedoresController extends Controller
      * @param  \Mozika\Fornecedor  $fornecedor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fornecedor $fornecedor)
+    public function edit($id)
     {
-        //
+        // Localiza o registro pelo seu ID
+        $fornecedor = Fornecedor::findOrFail($id);
+        // Obtém todos os registros da tabela de classificação
+        $fornecedores = Fornecedor::orderBy('FOR_ID', 'desc')->paginate(6);
+        // Chama a view com o formulário para edição do registro
+        return view(
+            'cadastros/fornecedores/editar',
+            [
+                'fornecedor'   => $fornecedor,
+                'fornecedores' => $fornecedores
+            ]
+        );
     }
 
     /**
@@ -89,9 +103,31 @@ class FornecedoresController extends Controller
      * @param  \Mozika\Fornecedor  $fornecedor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fornecedor $fornecedor)
+    public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'FOR_NOME' => 'required|string|max:255',
+            'FOR_EMAIL' => 'required|string|email|max:255',
+        ];
+
+        // Primeiro, vamos validar os dados do formulário
+        $request->validate($rules);
+
+        // Cria um novo registro
+        $fornecedor = Fornecedor::findOrFail($id);
+        $fornecedor->FOR_NOME           = $request->FOR_NOME;
+        $fornecedor->FOR_TELEFONE       = $request->FOR_TELEFONE;
+        $fornecedor->FOR_EMAIL          = $request->FOR_EMAIL;
+        $fornecedor->FOR_DOCUMENTO      = $request->FOR_DOCUMENTO;
+        $fornecedor->FOR_ENDERECO       = $request->FOR_ENDERECO;
+
+        // Salva os dados na tabela
+        $fornecedor->save();
+
+        // Retorna para view index com uma flash message
+        return redirect()
+            ->route('fornecedores')
+            ->with('status', 'Registro atualizado com sucesso!');
     }
 
     /**
@@ -100,8 +136,14 @@ class FornecedoresController extends Controller
      * @param  \Mozika\Fornecedor  $fornecedor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fornecedor $fornecedor)
+    public function destroy($id)
     {
-        //
+        $fornecedor = Fornecedor::findOrFail($id);
+        //Exclui o registro
+        $fornecedor->delete();
+
+        return redirect()
+            ->route('fornecedores')
+            ->with('status', 'Registro apagado com sucesso!');
     }
 }

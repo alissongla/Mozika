@@ -9,19 +9,19 @@
                 <div class="card bg-gradient-secondary shadow">
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
-                            <h3>Cadastro de Fornecedores</h3>
+                            <h3>Cadastro de Clientes</h3>
                         </div>
                     </div>
                     <div class="card-body">
-                    <form role="form" method="POST" action="{{ route('CadastroFornecedor') }}">
+                        <form role="form" method="POST" action="{{ route('AtualizarCliente', $cliente->CLI_ID) }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group{{ $errors->has('nome') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                     </div>
-                                    <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nome') }}" type="text" name="FOR_NOME" value="{{ old('name') }}" required autofocus>
+                                    <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nome') }}" type="text" name="CLI_NOME" value="{{ $cliente->CLI_NOME }}" required autofocus>
                                 </div>
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -34,7 +34,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="FOR_EMAIL" required>
+                                    <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="CLI_EMAIL" value="{{ $cliente->CLI_EMAIL }}" >
                                 </div>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -47,7 +47,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="{{ __('Telefone') }}" type="text" name="FOR_TELEFONE">
+                                    <input class="form-control" placeholder="{{ __('Telefone') }}" type="text" name="CLI_TELEFONE" value="{{ $cliente->CLI_TELEFONE }}">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -55,19 +55,12 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-badge"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="{{ __('Documento') }}" type="text" name="FOR_DOCUMENTO">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group input-group-alternative mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
-                                    </div>
-                                    <input class="form-control" placeholder="{{ __('Endereço') }}" type="text" name="FOR_ENDERECO">
+                                    <input class="form-control" placeholder="{{ __('Documento') }}" type="text" name="CLI_DOCUMENTO" value="{{ $cliente->CLI_DOCUMENTO }}">
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mt-4" action="{{ route('CadastroFornecedor') }}">{{ __('Cadastrar Fornecedor') }}</button>
+                                <button type="submit" class="btn btn-primary mt-4" action="{{ route('AtualizarCliente', $cliente->CLI_ID) }}">{{ __('Atualizar Cliente') }}</button>
+                                <a class="btn btn-primary mt-4" href="{{ route('clientes') }}">{{ __('Limpar Campos') }}</a>
                             </div>
                         </form>
                     </div>
@@ -82,7 +75,19 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        
+                    <div class="table-responsive">
+                            <table class="table align-items-center">
+                                <tbody>
+                                    @foreach($clientes as $cliente)
+                                    <tr>
+                                        <td>{{ $cliente->CLI_NOME }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            @include('pagination.default', ['paginator' => $clientes])
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
