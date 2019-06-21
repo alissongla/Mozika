@@ -58,6 +58,7 @@ Route::delete('/clientes/{id}/apagar', 'ClientesController@destroy')->name('Apag
 Route::get('/vendas', 'VendasController@index')->name('vendas');
 Route::get('/vendas/lista', 'VendasController@lista')->name('ListaVenda');
 Route::get('/vendas/nota', 'VendasController@nota')->name('NotaVenda');
+Route::get('/vendas/nota/gerar', 'VendasController@gerarNota')->name('GerarNota');
 Route::post('/vendas/inserir', 'VendasController@store')->name('pedidoVenda');
 Route::get('/vendas/{id}', 'VendasController@index')->name('MostrarVenda');
 Route::get('/vendas/{id}/editar', 'VendasController@edit')->name('EditarVenda');

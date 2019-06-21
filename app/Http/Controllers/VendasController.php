@@ -22,6 +22,14 @@ class VendasController extends Controller
         return view('vendas/comprovante');
     }
 
+    public function gerarNota(){
+        $vendas = Venda::all();
+ 
+        return \PDF::loadView('vendas/nota', compact('vendas'))
+                    // Se quiser que fique no formato a4 retrato: ->setPaper('a4', 'landscape')
+                    ->stream('comprovante.pdf');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
