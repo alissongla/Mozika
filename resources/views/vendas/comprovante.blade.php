@@ -40,7 +40,7 @@
                                     </select>   
                             </div>
                             <div class="text-center">
-                            <a class="btn btn-primary mt-4" href="{{ route('GerarNota') }}">{{ __('Gerar Comprovante') }}</a>
+                            <a class="btn btn-primary mt-4" target="_blank" href="{{ route('GerarNota') }}">{{ __('Gerar Comprovante') }}</a>
                             </div>
                         
                     </div>
