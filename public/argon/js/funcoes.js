@@ -9,7 +9,7 @@ $(document).ready(function(){
     };
     $('.cpfCnpjMask').mask(CpfCnpjMaskBehavior, cpfCnpjpOptions);
     $('.cep').mask('99999-999');
-    
+    $('.dinheiro').mask('#.##0,00', {reverse: true});
     $('.tel').mask('9999-9999');
     $('.tel_ddd').mask('(99) 9999-9999');
     $('.phone_us').mask('(999) 999-9999');

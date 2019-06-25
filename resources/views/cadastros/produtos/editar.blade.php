@@ -34,7 +34,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-credit-card"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="{{ __('Valor') }}" type="text" name="PRO_VALOR" value="{{ $produto->PRO_VALOR }}">
+                                    <input class="dinheiro form-control" placeholder="{{ __('Valor') }}" type="text" name="PRO_VALOR" value="{{ $produto->PRO_VALOR }}">
                                 </div>
                             </div>
                             <div class="form-group">
