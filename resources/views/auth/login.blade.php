@@ -32,7 +32,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Password') }}" type="password" value="secret" required>
+                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Senha') }}" type="password" value="secret" required>
                                 </div>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -43,11 +43,11 @@
                             <div class="custom-control custom-control-alternative custom-checkbox">
                                 <input class="custom-control-input" name="remember" id="customCheckLogin" type="checkbox" {{ old('remember') ? 'checked' : '' }}>
                                 <label class="custom-control-label" for="customCheckLogin">
-                                    <span class="text-muted">{{ __('Remember me') }}</span>
+                                    <span class="text-muted">{{ __('Lembrar-me') }}</span>
                                 </label>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary my-4">{{ __('Entrar') }}</button>
+                                <button type="submit" class="btn btn-dark mt-4" style="background-color:#db5502">{{ __('Entrar') }}</button>
                             </div>
                         </form>
                     </div>

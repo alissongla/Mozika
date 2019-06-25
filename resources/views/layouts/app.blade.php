@@ -26,7 +26,7 @@
             @include('layouts.navbars.sidebar')
         @endauth
         
-        <div class="main-content">
+        <div class="main-content bg-gradient-darker">
             @include('layouts.navbars.navbar')
             @yield('content')
         </div>
