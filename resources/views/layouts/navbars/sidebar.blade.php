@@ -112,7 +112,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#navbar-venda" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                    <a class="nav-link" href="#navbar-venda" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="ni ni-cart text-orange" style="color: #f4645f;"></i>
                         <span class="nav-link-text" style="text-decoration: bold">{{ __('Vendas') }}</span>
                     </a>
