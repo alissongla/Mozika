@@ -5,7 +5,7 @@
     </li>
     @for ($i = 1; $i <= $paginator->lastPage(); $i++)
         <li class="{{ ($paginator->currentPage() == $i) ? ' active' : '' }}">
-            <a class="btn btn-dark mt-4" style="background-color:#db5502" href="{{ $paginator->url($i) }}" style="margin-right: 10px">{{ $i }}</a>
+            <a class="btn btn-dark mt-4" style="background-color:#db5502; margin-right: 10px" href="{{ $paginator->url($i) }}" >{{ $i }}</a>
         </li>
     @endfor
     <li class="{{ ($paginator->currentPage() == $paginator->lastPage()) ? ' d-none' : '' }}">
