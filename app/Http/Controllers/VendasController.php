@@ -5,6 +5,7 @@ namespace Mozika\Http\Controllers;
 use Mozika\Venda;
 use Mozika\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VendasController extends Controller
 {
@@ -21,10 +22,24 @@ class VendasController extends Controller
     {
         return view('vendas/comprovante');
     }
+   
+    public function gerarNota(Request $request){
+        $cliente = DB::Table('clientes')
+            ->select("*")
+            ->where("CLI_ID" , $request->CLI_ID)
+            ->get();
 
-    public function gerarNota(){
-        $vendas = Venda::all();
- 
+        $vendas = DB::Table('vendas')
+        ->join('clientes', 'vendas.CLI_ID', '=', 'clientes.CLI_ID')
+        ->join('produtos', 'vendas.PRO_ID', '=', 'produtos.PRO_ID')
+        ->join('users', 'vendas.USU_ID', '=', 'users.id')
+        ->select("*")
+        ->where("vendas.VEN_DATA_VENDA" , $request->dtVenda)
+        ->where("vendas.CLI_ID", $request->CLI_ID)
+        ->get();   
+        
+        //die($vendas);
+        
         return \PDF::loadView('vendas/nota', compact('vendas'))
                     // Se quiser que fique no formato a4 retrato: ->setPaper('a4', 'landscape')
                     ->stream('comprovante.pdf');

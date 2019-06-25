@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                    
+                    <form role="form" method="get" action="{{ route('GerarNota') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group">
@@ -40,7 +40,7 @@
                                     </select>   
                             </div>
                             <div class="text-center">
-                            <a class="btn btn-primary mt-4" target="_blank" href="{{ route('GerarNota') }}">{{ __('Gerar Comprovante') }}</a>
+                            <button type="submit" class="btn btn-primary mt-4" action="{{ route('GerarNota') }}">{{ __('Gerar') }}</button>
                             </div>
                         
                     </div>

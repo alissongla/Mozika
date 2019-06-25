@@ -138,8 +138,8 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-tag text-orange"></i><span class="nav-link-text" style="text-decoration: bold"> {{ __('Compra') }}</span>
+                    <a class="nav-link" href="{{ route('ListaEstoque') }}">
+                        <i class="ni ni-tag text-orange"></i><span class="nav-link-text" style="text-decoration: bold"> {{ __('Estoque') }}</span>
                     </a>
                 </li>
                 <!-- <li class="nav-item">

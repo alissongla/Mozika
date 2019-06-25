@@ -65,7 +65,8 @@ Route::get('/vendas/{id}/editar', 'VendasController@edit')->name('EditarVenda');
 Route::post('/vendas/{id}', 'VendasController@update')->name('AtualizarVenda');
 Route::delete('/vendas/{id}/apagar', 'VendasController@destroy')->name('ApagarVenda');
 
-
+Route::get('/estoque/lista', 'EstoqueController@show')->name('ListaEstoque');
+Route::get('/vendas/nota/gerar', 'EstoqueController@gerarRelatorio')->name('RelatorioEstoque');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
