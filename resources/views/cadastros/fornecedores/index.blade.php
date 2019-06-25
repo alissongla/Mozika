@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mt-4" action="{{ route('CadastroFornecedor') }}">{{ __('Cadastrar Fornecedor') }}</button>
+                                <button type="submit" class="btn btn-dark mt-4" style="background-color:#db5502" action="{{ route('CadastroFornecedor') }}">{{ __('Cadastrar Fornecedor') }}</button>
                             </div>
                         </form>
                     </div>

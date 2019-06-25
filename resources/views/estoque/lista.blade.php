@@ -46,7 +46,7 @@
                         @include('pagination.default', ['paginator' => $produtos])
                     </div>
                     <div class="text-center">
-                        <a class="btn btn-primary mt-4" href="{{ route('RelatorioEstoque') }}">{{ __('Gerar Relatório') }}</a>
+                        <a class="btn btn-dark mt-4" style="background-color:#db5502" href="{{ route('RelatorioEstoque') }}">{{ __('Gerar Relatório') }}</a>
                     </div>
                 </div>
             </div>

@@ -59,8 +59,8 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mt-4" action="{{ route('AtualizarCliente', $cliente->CLI_ID) }}">{{ __('Atualizar Cliente') }}</button>
-                                <a class="btn btn-primary mt-4" href="{{ route('clientes') }}">{{ __('Limpar Campos') }}</a>
+                                <button type="submit" class="btn btn-dark mt-4" style="background-color:#db5502" action="{{ route('AtualizarCliente', $cliente->CLI_ID) }}">{{ __('Atualizar Cliente') }}</button>
+                                <a class="btn btn-dark mt-4" style="background-color:#db5502" href="{{ route('clientes') }}">{{ __('Limpar Campos') }}</a>
                             </div>
                         </form>
                     </div>

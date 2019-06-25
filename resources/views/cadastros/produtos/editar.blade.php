@@ -86,8 +86,8 @@
                                     </select>   
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mt-4" action="{{ route('AtualizarProduto', $produto->PRO_ID) }}">{{ __('Salvar Alterações') }}</button>
-                                <a class="btn btn-primary mt-4" href="{{ route('produtos') }}">{{ __('Limpar Campos') }}</a>
+                                <button type="submit" class="btn btn-dark mt-4" style="background-color:#db5502" action="{{ route('AtualizarProduto', $produto->PRO_ID) }}">{{ __('Salvar Alterações') }}</button>
+                                <a class="btn btn-dark mt-4" style="background-color:#db5502" href="{{ route('produtos') }}">{{ __('Limpar Campos') }}</a>
                             </div>
                         </form>
                     </div>

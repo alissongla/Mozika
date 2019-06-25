@@ -76,7 +76,7 @@
                                     </select>   
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mt-4" action="{{ route('CadastroProduto') }}">{{ __('Cadastrar Produto') }}</button>
+                                <button type="submit" class="btn btn-dark mt-4" style="background-color:#db5502" action="{{ route('CadastroProduto') }}">{{ __('Cadastrar Produto') }}</button>
                             </div>
                         </form>
                     </div>

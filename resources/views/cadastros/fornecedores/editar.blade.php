@@ -67,8 +67,8 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mt-4" action="{{ route('AtualizarFornecedor', $fornecedor->FOR_ID) }}">{{ __('Salvar Alterações') }}</button>
-                                <a class="btn btn-primary mt-4" href="{{ route('fornecedores') }}">{{ __('Limpar Campos') }}</a>
+                                <button type="submit" class="btn btn-dark mt-4" style="background-color:#db5502" action="{{ route('AtualizarFornecedor', $fornecedor->FOR_ID) }}">{{ __('Salvar Alterações') }}</button>
+                                <a class="btn btn-dark mt-4" style="background-color:#db5502" href="{{ route('fornecedores') }}">{{ __('Limpar Campos') }}</a>
                             </div>
                         </form>
                     </div>
