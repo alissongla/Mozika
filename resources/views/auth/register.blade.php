@@ -62,7 +62,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="{{ __('Confirme a Senha') }}" type="password" name="password_confirmation" required>
+                                    <input class="form-control" placeholder="{{ __('Confirme a senha') }}" type="password" name="password_confirmation" required>
                                 </div>
                             </div>
                             <div class="text-center">

@@ -21,7 +21,7 @@
     <body class="{{ $class ?? '' }}">
         @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
             </form>
             @include('layouts.navbars.sidebar')
         @endauth
