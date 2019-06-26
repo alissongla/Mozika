@@ -18,12 +18,9 @@
 
 
 ## Dados de acesso ao sistema
-- login: admin@mozika.com
-- senha: admin
+- login: admin@mozika.com // senha: admin
 
-- login: ven1@mozika.com
-- senha: 123456
+- login: ven1@mozika.com // senha: 123456
 
-- login: ven2@mozika.com
-- senha: 123456
+- login: ven2@mozika.com // senha: 123456
 
