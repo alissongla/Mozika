@@ -1,4 +1,4 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center"><img src="public/argon/img/brand/mozika.png"></p>
 
 
 ## Sobre o projeto
@@ -9,7 +9,7 @@
 - Alisson Glauber de Santana Campos
 - João Pedro Capelo Machado
 - Renan Carlos de Lima e Silva
-- Vinícius Ferraz 
+- Vinícius Ferraz da Conceição
 
 ## Dados do banco
 - Banco de dados: db_lojainstrumentos
