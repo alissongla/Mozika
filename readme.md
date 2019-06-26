@@ -15,6 +15,7 @@
 - Banco de dados: db_lojainstrumentos
 - DB_USERNAME: root
 - Banco não tem senha
+- rodar seeder para popular o banco
 
 
 ## Dados de acesso ao sistema
