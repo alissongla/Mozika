@@ -12,34 +12,34 @@ class CategoriaSeeder extends Seeder
     public function run()
     {
         DB::table('categorias')->insert([
-            'CLI_DESCRICAO' => 'Acessórios',
+            'CAT_DESCRICAO' => 'Acessórios',
         ]);
         DB::table('categorias')->insert([
-            'CLI_DESCRICAO' => 'Sopro - Madeiras',
-        ]);
-
-        DB::table('categorias')->insert([
-            'CLI_DESCRICAO' => 'Sopro - Metais',
+            'CAT_DESCRICAO' => 'Sopro - Madeiras',
         ]);
 
         DB::table('categorias')->insert([
-            'CLI_DESCRICAO' => 'Percussão',
+            'CAT_DESCRICAO' => 'Sopro - Metais',
         ]);
 
         DB::table('categorias')->insert([
-            'CLI_DESCRICAO' => 'Cordas',
+            'CAT_DESCRICAO' => 'Percussão',
         ]);
 
         DB::table('categorias')->insert([
-            'CLI_DESCRICAO' => 'Livros e Manuais',
+            'CAT_DESCRICAO' => 'Cordas',
         ]);
 
         DB::table('categorias')->insert([
-            'CLI_DESCRICAO' => 'Teclas',
+            'CAT_DESCRICAO' => 'Livros e Manuais',
         ]);
 
         DB::table('categorias')->insert([
-            'CLI_DESCRICAO' => 'Equipamentos de aúdio',
+            'CAT_DESCRICAO' => 'Teclas',
+        ]);
+
+        DB::table('categorias')->insert([
+            'CAT_DESCRICAO' => 'Equipamentos de aúdio',
         ]);
     }
 }

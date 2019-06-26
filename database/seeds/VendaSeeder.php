@@ -12,7 +12,7 @@ class VendaSeeder extends Seeder
     public function run()
     {
         $produtosIDs = DB::table('produtos')->select('PRO_ID')->get();
-        $fornecedoresIDs = DB::table('fornecedores')->select('FOR_ID')->get();
+        $clientesIDs = DB::table('clientes')->select('CLI_ID')->get();
         $usuariosIDs = DB::table('users')->select('id')->get();
 
         $faker = Faker\Factory::create();
@@ -23,8 +23,8 @@ class VendaSeeder extends Seeder
                 'VEN_DATA_VENDA'    => $faker->date($format = 'Y-m-d', $max = 'now'), 
                 'VEN_HORA_VENDA'    => $faker->time($format = 'H:i:s', $max = 'now'),
                 'VEN_QTDE_VENDIDA'  => $faker->numberBetween($min = 1, $max = 2),
-                'PRO_ID'            => $faker->randomElement($produtosIDs)->id,
-                'CLI_ID'            => $faker->randomElement($fornecedoresIDs)->id,
+                'PRO_ID'            => $faker->randomElement($produtosIDs)->PRO_ID,
+                'CLI_ID'            => $faker->randomElement($clientesIDs)->CLI_ID,
                 'USU_ID'            => $faker->randomElement($usuariosIDs)->id
             ]);
         }

@@ -11,9 +11,9 @@ class ClienteSedder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Faker\Factory::create('pt_BR');
 
-        for($c=0; $c<150; $c++){
+        for($c=0; $c<10; $c++){
             DB::Table('clientes')->insert([
                 'CLI_NOME'          => $faker->name(),
                 'CLI_TELEFONE'      => $faker->cellphoneNumber(),

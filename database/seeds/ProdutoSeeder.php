@@ -12,11 +12,12 @@ class ProdutoSeeder extends Seeder
     public function run()
     {
         $fornecedoresIDs = DB::table('fornecedores')->select('FOR_ID')->get();
+        $faker = Faker\Factory::create();
             DB::Table('produtos')->insert([
                 'PRO_NOME' => 'Baqueta',
                 'PRO_VALOR' => 30.00,
                 'PRO_QTDE_ESTOQUE' => 300,
-                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->id,
+                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->FOR_ID,
                 'CAT_ID' => 1
             ]);
 
@@ -24,7 +25,7 @@ class ProdutoSeeder extends Seeder
                 'PRO_NOME' => 'Bateria',
                 'PRO_VALOR' => 2000.00,
                 'PRO_QTDE_ESTOQUE' => 5,
-                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->id,
+                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->FOR_ID,
                 'CAT_ID' => 4
             ]);
 
@@ -32,7 +33,7 @@ class ProdutoSeeder extends Seeder
                 'PRO_NOME' => 'Trompete',
                 'PRO_VALOR' => 600.00,
                 'PRO_QTDE_ESTOQUE' => 5,
-                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->id,
+                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->FOR_ID,
                 'CAT_ID' => 3
             ]);
 
@@ -40,7 +41,7 @@ class ProdutoSeeder extends Seeder
                 'PRO_NOME' => 'Saxofone',
                 'PRO_VALOR' => 2000.00,
                 'PRO_QTDE_ESTOQUE' => 8,
-                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->id,
+                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->FOR_ID,
                 'CAT_ID' => 2
             ]);
 
@@ -48,7 +49,7 @@ class ProdutoSeeder extends Seeder
                 'PRO_NOME' => 'Violão',
                 'PRO_VALOR' => 350.00,
                 'PRO_QTDE_ESTOQUE' => 20,
-                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->id,
+                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->FOR_ID,
                 'CAT_ID' => 5
             ]);
 
@@ -56,7 +57,7 @@ class ProdutoSeeder extends Seeder
                 'PRO_NOME' => 'Ukulele',
                 'PRO_VALOR' => 200.00,
                 'PRO_QTDE_ESTOQUE' => 20,
-                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->id,
+                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->FOR_ID,
                 'CAT_ID' => 5
             ]);
 
@@ -64,7 +65,7 @@ class ProdutoSeeder extends Seeder
                 'PRO_NOME' => 'Teclado',
                 'PRO_VALOR' => 500.00,
                 'PRO_QTDE_ESTOQUE' => 8,
-                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->id,
+                'FOR_ID' => $faker->randomElement($fornecedoresIDs)->FOR_ID,
                 'CAT_ID' => 4
             ]);
         

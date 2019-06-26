@@ -11,11 +11,11 @@ class FornecedorSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Faker\Factory::create('pt_BR');
 
         for($c=1; $c<=10; $c++){
             DB::Table('fornecedores')->insert([
-                'FOR_NOME'          => 'Fornecedor '+$c,
+                'FOR_NOME'          => $faker->company(),
                 'FOR_TELEFONE'      => $faker->cellphoneNumber(),
                 'FOR_EMAIL'         => $faker->email(),
                 'FOR_DOCUMENTO'     => $faker->cnpj()
