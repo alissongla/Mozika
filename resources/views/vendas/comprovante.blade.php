@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                    <form role="form" method="get" action="{{ route('GerarNota') }}">
+                    <form role="form" method="get" action="{{ route('GerarNota') }}" target="_blank">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group">

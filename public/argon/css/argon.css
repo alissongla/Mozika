@@ -5347,6 +5347,7 @@ input[type='button'].btn-block
 
     background: no-repeat center center;
     background-size: 100% 100%;
+    color: #000000;
 }
 
 @media (max-width: 575.98px)
@@ -21896,3 +21897,4 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 
     align-items: center;
 }
+

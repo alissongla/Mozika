@@ -20,6 +20,7 @@ class CreateTableProdutos extends Migration
             $table->integer('PRO_QTDE_ESTOQUE');
             $table->unsignedBigInteger('FOR_ID');
             $table->unsignedBigInteger('CAT_ID');
+            $table->timestamps();
 
             //Criando as chaves estrangeiras
             $table->foreign('FOR_ID')
