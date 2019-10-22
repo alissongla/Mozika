@@ -10,14 +10,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Vendas</h5>
-                                    <?php
-                                        $vendas = DB::Table('vendas')
-                                        ->select("VEN_ID")
-                                        ->where("USU_ID" , auth()->user()->id)
-                                        ->get();
-                                        $numeroVendas = $vendas->count();
-                                       echo "<span class=\"h2 font-weight-bold mb-0\">$numeroVendas</span>" 
-                                    ?>
+                                    
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
