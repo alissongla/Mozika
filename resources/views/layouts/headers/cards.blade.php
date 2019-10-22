@@ -58,26 +58,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Produto mais vendido</h5>
-                                    <?php
-                                        $vendas = DB::Table('vendas')
-                                        ->select(DB::raw('PRO_ID, sum(VEN_QTDE_VENDIDA) as qtde'))
-                                        ->where("USU_ID" , auth()->user()->id)
-                                        ->groupBy("PRO_ID")
-                                        ->orderBy("qtde", "desc")
-                                        ->limit(1)
-                                        ->get();
-
-                                        foreach($vendas as $venda){
-                                            $produto = DB::Table('produtos')
-                                            ->select('PRO_NOME')
-                                            ->where("PRO_ID" , $venda->PRO_ID)
-                                            ->get();
-                                        }
-                                        
-                                        foreach($produto as $ln){
-                                            echo "<span class=\"h2 font-weight-bold mb-0\">$ln->PRO_NOME</span>"; 
-                                        }
-                                    ?>
+                                    
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
