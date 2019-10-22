@@ -9,7 +9,7 @@
             <div class="col-lg-6 col-md-4" >
                 <div class="card bg-secondary">
                     <div class="card-header bg-transparent pb-15">
-                        <img alt="Image placeholder" src="{{ asset('argon') }}/img/brand/mozika.png" style="margin-left: 35%; width: 30%;">
+                        <img alt="Image placeholder" src="{{ secure_asset('argon') }}/img/brand/mozika.png" style="margin-left: 35%; width: 30%;">
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
