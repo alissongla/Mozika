@@ -37,18 +37,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Valor vendido (R$)</h5>
-                                    <?php
-                                        $vendas = DB::Table('vendas')
-                                        ->select(DB::raw('sum(VEN_VALOR) as valor'))
-                                        ->where("USU_ID" , auth()->user()->id)
-                                        ->get();
-
-                                        foreach($vendas as $ln){
-                                            $valor = number_format($ln->valor, 2, ',', '.');
-                                            
-                                            echo "<span class=\"h2 font-weight-bold mb-0\">$valor</span>"; 
-                                        }
-                                    ?>
+                                    
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
