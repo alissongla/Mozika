@@ -13,7 +13,7 @@
                                     <?php
                                         $vendas = DB::Table('vendas')
                                         ->select("VEN_ID")
-                                        ->where("USU_ID" , auth()->user()->id)
+                                        ->where("USU_ID" , DB::raw(auth()->user()->id))
                                         ->get();
                                         $numeroVendas = $vendas->count();
                                        echo "<span class=\"h2 font-weight-bold mb-0\">$numeroVendas</span>" 
